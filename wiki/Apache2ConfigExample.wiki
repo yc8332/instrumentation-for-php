@@ -1,0 +1,9 @@
+#summary An example configuration file for Apache which will write metrics into a performance log file
+#labels Phase-Deploy
+
+SetEnvIf Request_URI \.php instrumented
+
+
+LogFormat "\"%{%Y-%m-%d %H:%M:%S}t\" %a %I %O %D %f %H %m \"%q\" %>s %V %{CTR_total_cpu_time}e %{CTR_cpu_user}e %{CTR_cpu_system}e %{CTR_memory_usage}e \"%{CTR_request_id}e\" \"%{CTR_SESSION_uname}e\" \"%{CTR_session_id}e\" %{CTR_mysql_query_count}e %{CTR_mysql_prepare_count}e %{CTR_mysql_prepare_time}e %{CTR_mysql_connection_count}e %{CTR_mysql_query_exec_time}e %{CTR_mysql_deadlock_count}e %{CTR_memcache_connection_count}e %{CTR_memcache_delete_count}e %{CTR_memcache_delete_time}e %{CTR_memcache_miss_count}e %{CTR_memcache_get_count}e %{CTR_memcache_get_time}e %{CTR_memcache_set_count}e %{CTR_memcache_set_time}e %{CTR_memcache_add_count}e %{CTR_memcache_add_time}e %{CTR_memcache_replace_count}e %{CTR_memcache_replace_time}e %{CTR_memcache_increment_count}e %{CTR_memcache_increment_time}e %{CTR_memcache_decrement_count}e %{CTR_memcache_decrement_time}e" performance
+
+CustomLog logs/performance_log performance  env=instrumented

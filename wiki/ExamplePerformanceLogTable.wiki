@@ -1,4 +1,5 @@
 #summary DDL for a table to store the entries from the performance log
+#labels Featured,Phase-Deploy
 = You can use LOAD DATA INFILE to populate the table = 
 
 

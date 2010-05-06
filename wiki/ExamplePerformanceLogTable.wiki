@@ -45,6 +45,5 @@
   `memcache_increment_count` mediumint(9) DEFAULT NULL,
   `memcache_increment_time` float DEFAULT NULL,
   `memcache_decrement_count` mediumint(9) DEFAULT NULL,
-  `memcache_decrement_time` float DEFAULT NULL,
-  `old_service_time` bigint(20) DEFAULT NULL
+  `memcache_decrement_time` float DEFAULT NULL
 )</code>
